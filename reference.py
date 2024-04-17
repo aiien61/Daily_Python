@@ -20,7 +20,7 @@ spam = [1,2,3]
 eggs(spam)
 print(spam) # output [1,2,3,'Hello'] because passing the reference of spam into function eggs instead of its value
 
-# use copy and deepcopy to pass by value and reference
+# use copy and deepcopy to pass by value
 import copy
 spam = ['A', 'B', 'C', 'D']
 cheese = copy.copy(spam)
