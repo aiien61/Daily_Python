@@ -50,3 +50,19 @@ def character_count():
 
 
 character_count()
+
+all_guests = {
+    'Alice': {'apples': 5, 'pretzels': 12},
+    'Bob': {'ham sandwiches': 3, 'apples': 2},
+    'Carol': {'cups': 3, 'apple pies': 1}
+}
+
+def totoal_brought(guests: dict, item: str) -> int:
+    num_brought = 0
+    for guest_item in guests.values():
+        num_brought += guest_item.get(item, 0)
+    return num_brought
+
+print('Number of things being brought:')
+for item in ['apples', 'cups', 'cakes', 'ham sandwiches', 'apple pies']:
+    print(f"- {item.capitalize()}  {totoal_brought(all_guests, item)}")
