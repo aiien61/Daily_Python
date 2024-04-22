@@ -68,7 +68,7 @@ print(vowel_regrex.findall('Robocop eats baby food. BABY FOOD.'))
 double_vowl_regrex = re.compile(r'[aeiouAEIOU]{2}') # find consecutive vowels
 print(double_vowl_regrex.findall('Robocop Eats Baby Food. BABY FOOD.'))
 
-# ^: exclude the specified characters
+# [^]: exclude the specified characters
 print('Negative character classes'.center(50, '-'))
 consonant_regrex = re.compile(r'[^aeiouAEIOU]')
 print(consonant_regrex.findall('Robocop Eats Baby Food. BABY FOOD.'))
