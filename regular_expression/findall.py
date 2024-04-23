@@ -72,3 +72,8 @@ print(double_vowl_regrex.findall('Robocop Eats Baby Food. BABY FOOD.'))
 print('Negative character classes'.center(50, '-'))
 consonant_regrex = re.compile(r'[^aeiouAEIOU]')
 print(consonant_regrex.findall('Robocop Eats Baby Food. BABY FOOD.'))
+
+# find dot
+print('find digit and dot'.center(30, '-'))
+dot_regrex = re.compile(r'[1-5.]')
+print(dot_regrex.findall('1234567890.'))
