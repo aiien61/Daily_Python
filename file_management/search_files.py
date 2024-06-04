@@ -4,6 +4,14 @@
 
 import os, sys, re
 
+print(f'User regex pattern: {sys.argv[2:]}')
+pattern = ''.join(sys.argv[2:])
+regex = re.compile(r'{}'.format(pattern))
+
 for folder, subfolders, files in os.walk(sys.argv[1]):
-    for file in files:
-        pass
+    for filename in files:
+        if filename.endswith('txt'):
+            filepath = os.path.join(folder, filename)
+            with open(filepath, 'r') as textfile:
+                if result :=regex.search(textfile.read()):
+                    print(f'"{result.group()}" found in {filepath}')
