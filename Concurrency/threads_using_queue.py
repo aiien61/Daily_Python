@@ -26,13 +26,13 @@ class Producer(Thread):
     """
     def __init__(self, name: str, count: int, queue: Queue):
         super().__init__()
-        self.setName(name)
+        self.name: str = name
         self.count: int = count
         self.queue: Queue = queue
 
     def run(self) -> None:
         for i in range(self.count):
-            item: str = f"Item {i} -- produced by {self.getName()}"
+            item: str = f"Item {i} -- produced by {self.name}"
             self.queue.put(item, block=True)
 
 
@@ -41,14 +41,14 @@ class Consumer(Thread):
     """
     def __init__(self, name: str, queue: Queue):
         super().__init__()
-        self.setName(name)
-        self.setDaemon(True)  # if no items available, consumers will auto terminate 
+        self.name: str = name
+        self.daemon: bool = True  # if no items available, consumers will auto terminate 
         self.queue: Queue = queue
 
     def run(self) -> None:
         while True:
             item: str = self.queue.get(block=True)
-            print(f"Item {item} consumed by {self.getName()}\n", end='')
+            print(f"Item {item} consumed by {self.name}\n", end='')
 
 
 def main():
