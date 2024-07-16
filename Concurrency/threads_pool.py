@@ -1,6 +1,8 @@
 """
 The creation and destruction of threads are costly, so the pool of threads is designed to 
 efficiently manage and use threads in order for better performance.
+
+https://realpython.com/intro-to-python-threading/
 """
 import os
 import time
