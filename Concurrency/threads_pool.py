@@ -6,7 +6,7 @@ https://realpython.com/intro-to-python-threading/
 """
 import os
 import time
-from typing import Iterable
+from typing import Iterable, List
 from urllib.request import urlopen, Request
 from concurrent.futures import Future
 from concurrent.futures import ThreadPoolExecutor as Pool
@@ -52,7 +52,7 @@ def download_img(url: str) -> None:
     return f"{filename} downloaded, {url}"
 
 def download_images_using_pool_map() -> None:
-    urls = [
+    urls: List[str] = [
         "https://cdn.pixabay.com/photo/2021/09/28/13/14/cat-6664412_1280.jpg",
         "https://cdn.pixabay.com/photo/2022/11/10/00/38/creative-7581718_640.jpg",
         "https://cdn.pixabay.com/photo/2022/11/19/11/53/rose-7601873_640.jpg",
